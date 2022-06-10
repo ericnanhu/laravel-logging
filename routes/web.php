@@ -17,4 +17,3 @@ use App\Box;
 Route::get('/', function () {
     return view('welcome');
 });
-
