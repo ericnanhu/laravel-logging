@@ -37,7 +37,7 @@ class Box
 
         // Log::info('Added an item.');
         // Log::channel("very_very_important")->emergency("Added an item.");
-        Log::info("Added an item.", ["item" => $item]);
+        // Log::info("Added an item.", ["item" => $item]);
 
         // $logtail_logger = new Logger("logtail-source");
         // $logtail_logger->pushHandler(
@@ -46,7 +46,7 @@ class Box
 
         // $logtail_logger->info("Added an item.", ["item" => $item]);
 
-        Log::channel("null");
+        Log::channel("null")->emergency("Added an item.");
         return $this->items;
     }
 
