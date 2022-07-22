@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Box;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,13 @@ use App\Box;
 */
 
 Route::get('/', function () {
+    Log::debug("This is a debug message.");
+    Log::info("This is an info level message.");
+    Log::notice("This is a notice level message.");
+    Log::warning("This is a warning level message.");
+    Log::error("This is an error level message.");
+    Log::critical("This is a critical level message.");
+    Log::alert("This is an alert level message.");
+    Log::emergency("This is an emergency level message.");
     return view('welcome');
 });
