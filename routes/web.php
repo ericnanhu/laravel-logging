@@ -26,3 +26,14 @@ Route::get('/', function () {
     Log::emergency("This is an emergency level message.");
     return view('welcome');
 });
+
+Route::get('/user/{username}', function ($username) {
+    $users = ['user1', 'user2', 'user3'];
+
+    if (in_array($username, $users)) {
+        return "User found!";
+    } else {
+        Log::error('User does not exist.');
+        return "User does not exist.";
+    }
+});

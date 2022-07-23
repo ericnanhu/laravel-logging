@@ -49,6 +49,50 @@ return [
     |
     */
 
+    "channels" => [
+        "stack" => [
+            "driver" => "stack",
+            "channels" => ["single"],
+            "ignore_exceptions" => false,
+        ],
+
+        "debug" => [
+            'driver'  => 'monolog',
+            'handler' => Monolog\Handler\FilterHandler::class,
+            'with' => [
+                'handler' => new Monolog\Handler\RotatingFileHandler(storage_path('logs/debug.log'), 15),
+                'minLevelOrList' => [Monolog\Logger::DEBUG],
+            ],
+        ],
+
+        "info" => [
+            'driver'  => 'monolog',
+            'handler' => Monolog\Handler\FilterHandler::class,
+            'with' => [
+                'handler' => new Monolog\Handler\RotatingFileHandler(storage_path('logs/info.log'), 15),
+                'minLevelOrList' => [Monolog\Logger::INFO],
+            ],
+        ],
+
+        "info" => [
+            'driver'  => 'monolog',
+            'handler' => Monolog\Handler\FilterHandler::class,
+            'with' => [
+                'handler' => new Monolog\Handler\RotatingFileHandler(storage_path('logs/info.log'), 15),
+                'minLevelOrList' => [Monolog\Logger::INFO],
+            ],
+        ],
+
+        "info" => [
+            'driver'  => 'monolog',
+            'handler' => Monolog\Handler\FilterHandler::class,
+            'with' => [
+                'handler' => new Monolog\Handler\RotatingFileHandler(storage_path('logs/info.log'), 15),
+                'minLevelOrList' => [Monolog\Logger::INFO],
+            ],
+        ],
+    ],
+
     // "channels" => [
     //     "stack" => [
     //         "driver" => "stack",
@@ -122,50 +166,50 @@ return [
     //     ],
     // ],
 
-    "channels" => [
-        "example" => [
-            "driver" => "stack",
-            "channels" => [
-                "not_so_important",
-                "important",
-                "very_important",
-                "very_very_important",
-            ],
-            "ignore_exceptions" => false,
-        ],
+    // "channels" => [
+    //     "example" => [
+    //         "driver" => "stack",
+    //         "channels" => [
+    //             "not_so_important",
+    //             "important",
+    //             "very_important",
+    //             "very_very_important",
+    //         ],
+    //         "ignore_exceptions" => false,
+    //     ],
 
-        "not_so_important" => [
-            "driver" => "single",
-            // "tap" => [App\Logging\CustomizeFormatter::class],
-            "path" => storage_path("logs/not_so_important.log"),
-            "level" => "info",
-        ],
+    //     "not_so_important" => [
+    //         "driver" => "single",
+    //         // "tap" => [App\Logging\CustomizeFormatter::class],
+    //         "path" => storage_path("logs/not_so_important.log"),
+    //         "level" => "info",
+    //     ],
 
-        "important" => [
-            "driver" => "single",
-            "path" => storage_path("logs/important.log"),
-            "level" => "warning",
-        ],
+    //     "important" => [
+    //         "driver" => "single",
+    //         "path" => storage_path("logs/important.log"),
+    //         "level" => "warning",
+    //     ],
 
-        "very_important" => [
-            "driver" => "single",
-            "path" => storage_path("logs/very_important.log"),
-            "level" => "critical",
-        ],
+    //     "very_important" => [
+    //         "driver" => "single",
+    //         "path" => storage_path("logs/very_important.log"),
+    //         "level" => "critical",
+    //     ],
 
-        "very_very_important" => [
-            "driver" => "single",
-            "path" => storage_path("logs/very_very_important.log"),
-            "level" => "emergency",
-        ],
+    //     "very_very_important" => [
+    //         "driver" => "single",
+    //         "path" => storage_path("logs/very_very_important.log"),
+    //         "level" => "emergency",
+    //     ],
 
-        "null" => [
-            "driver" => "monolog",
-            "handler" => NullHandler::class,
-        ],
+    //     "null" => [
+    //         "driver" => "monolog",
+    //         "handler" => NullHandler::class,
+    //     ],
 
-        // "null" => [
-        //     "driver" => "null",
-        // ],
-    ],
+    //     // "null" => [
+    //     //     "driver" => "null",
+    //     // ],
+    // ],
 ];
